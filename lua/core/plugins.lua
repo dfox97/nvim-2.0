@@ -24,9 +24,14 @@ require("lazy").setup({
   "nvim-lualine/lualine.nvim",
   "lewis6991/gitsigns.nvim",
   "christoomey/vim-tmux-navigator",
-  "nvim-treesitter/nvim-treesitter",
-  "nvim-treesitter/nvim-treesitter-angular",
+  {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
   { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
+  "nvim-treesitter/playground",
+  { -- Additional text objects via treesitter
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		after = "nvim-treesitter",
+	},
+
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
@@ -37,6 +42,7 @@ require("lazy").setup({
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
+  "mbbill/undotree",
   -- Blamer gives git commit info on each line of code - same as git lense
   'APZelos/blamer.nvim',
   "tpope/vim-fugitive",

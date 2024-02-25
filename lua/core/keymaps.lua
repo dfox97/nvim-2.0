@@ -87,11 +87,8 @@ vim.api.nvim_set_keymap("n", "<leader>sw", ":lua Surround('w')<CR>", { noremap =
 vim.api.nvim_set_keymap("n", "<leader>sW", ":lua Surround('W')<CR>", { noremap = true, silent = true })
 
 
-
-
-
-
-
+-- undotree
+vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
 
 -- Harpoon setup in harpoon.lua
