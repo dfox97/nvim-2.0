@@ -6,15 +6,16 @@ require("lazy").setup({
   "dracula/vim",
 
   -- lsp/completion
-  "hrsh7th/nvim-cmp",
-  "hrsh7th/cmp-nvim-lsp",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
+  {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/nvim-cmp",
+  "L3MON4D3/LuaSnip",
 
+  "saadparwaiz1/cmp_luasnip",
+  "rafamadriz/friendly-snippets",
   "github/copilot.vim",
 
   -- File explorer / status line
@@ -25,8 +26,8 @@ require("lazy").setup({
   "lewis6991/gitsigns.nvim",
   "christoomey/vim-tmux-navigator",
   {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"},
-  { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" },
-  "nvim-treesitter/playground",
+  --[[ { "elgiano/nvim-treesitter-angular", branch = "topic/jsx-fix" }, ]]
+  --[[ "nvim-treesitter/playground", ]]
   { -- Additional text objects via treesitter
 		"nvim-treesitter/nvim-treesitter-textobjects",
 		after = "nvim-treesitter",
@@ -47,10 +48,7 @@ require("lazy").setup({
   'APZelos/blamer.nvim',
   "tpope/vim-fugitive",
   "tpope/vim-surround",
-
-  -- General plugins similar to some vs code behavior
-  "tpope/vim-commentary",
-  "mattn/emmet-vim",
+  
   -- for easily changing a line to comment
   {
     'numToStr/Comment.nvim',
@@ -69,7 +67,8 @@ require("lazy").setup({
       },
     },
     lazy = false,
-  },
+  }, 
+  
   --Toggle boolean value
   'gerazov/toggle-bool.nvim',
   -- console log sitter
@@ -77,4 +76,34 @@ require("lazy").setup({
     "iamcco/markdown-preview.nvim",
     run = "cd app && npm install",
   },
+
+  {
+  'stevearc/aerial.nvim',
+  opts = {},
+  -- Optional dependencies
+  dependencies = {
+     "nvim-treesitter/nvim-treesitter",
+     "nvim-tree/nvim-web-devicons"
+  },
+}
+
+--Move into seperate files later
+ --[[ {
+	"nvimtools/none-ls.nvim",
+	config = function()
+		local null_ls = require("null-ls")
+		null_ls.setup({
+			sources = {
+				null_ls.builtins.formatting.stylua,
+				null_ls.builtins.formatting.prettier,
+				null_ls.builtins.diagnostics.erb_lint,
+				null_ls.builtins.diagnostics.eslint_d,
+				null_ls.builtins.diagnostics.rubocop,
+				null_ls.builtins.formatting.rubocop,
+			},
+		})
+
+		vim.keymap.set("n", "<leader>nf", vim.lsp.buf.format, {})
+	end,
+} ]]
 })

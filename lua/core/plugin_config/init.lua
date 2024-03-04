@@ -15,3 +15,4 @@ require("core.plugin_config.blamer");
 require("core.plugin_config.lab");
 require("core.plugin_config.fugutive");
 require("core.plugin_config.toggle_bool");
+require("core.plugin_config.aerial");

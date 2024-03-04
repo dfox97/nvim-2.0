@@ -1,6 +1,6 @@
-require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "eslint", "tsserver", 'html', 'cssls', 'stylelint_lsp', 'jsonls' }
-})
+ require("mason-lspconfig").setup({
+  ensure_installed = { "lua_ls", "eslint", "tsserver", 'html', 'cssls', 'stylelint_lsp', 'jsonls', 'angularls' }
+}) 
 
 local lspconfig = require('lspconfig')
 
@@ -12,7 +12,7 @@ lsp_defaults.capabilities = vim.tbl_deep_extend(
   require('cmp_nvim_lsp').default_capabilities()
 )
 
-require("lspconfig").lua_ls.setup {
+lspconfig.lua_ls.setup {
   settings = {
     Lua = {
       diagnostics = {
@@ -28,7 +28,7 @@ require("lspconfig").lua_ls.setup {
   }
 }
 
-require("lspconfig").tsserver.setup({
+lspconfig.tsserver.setup({
   settings = {
     completions = {
       completeFunctionCalls = true
@@ -36,7 +36,7 @@ require("lspconfig").tsserver.setup({
   },
 
 })
-require('lspconfig').stylelint_lsp.setup({
+lspconfig.stylelint_lsp.setup({
   filetypes = { "css", "scss" },
   settings = {
     stylelintplus = {
@@ -44,7 +44,7 @@ require('lspconfig').stylelint_lsp.setup({
     }
   }
 })
-require('lspconfig').eslint.setup({
+lspconfig.eslint.setup({
   settings = {
     linting = {
       eslint = {
@@ -69,7 +69,6 @@ local cmd = {
 }
 
 require('lspconfig').angularls.setup({
-  
   cmd = cmd,
   fileTypes = { "typescript", "html", "typescriptreact", "typescript.tsx" },
   on_new_config = function (new_config, new_root_dir)
@@ -104,4 +103,4 @@ vim.api.nvim_create_autocmd('LspAttach', {
       vim.lsp.buf.format { async = true }
     end, opts)
   end,
-})
+}) 
