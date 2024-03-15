@@ -6,7 +6,11 @@
   },
 }) ]]
 
-local c = require('vscode.colors').get_colors()
+
+vim.cmd[[colorscheme tokyonight-night]]
+
+
+--[[ local c = require('vscode.colors').get_colors()
 require('vscode').setup({
 
     -- Enable transparent background
@@ -35,3 +39,4 @@ require('vscode').load()
 vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.cmd[[colorscheme vscode]]
+

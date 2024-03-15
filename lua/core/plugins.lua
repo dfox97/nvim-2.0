@@ -4,7 +4,12 @@ require("lazy").setup({
   --[[ { "catppuccin/nvim", name = "catppuccin", priority = 1000 }, ]]
   "ellisonleao/gruvbox.nvim",
   "dracula/vim",
-
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+  },
   -- lsp/completion
   {'VonHeikemen/lsp-zero.nvim', branch = 'v3.x'},
   "williamboman/mason.nvim",
@@ -17,7 +22,6 @@ require("lazy").setup({
   "saadparwaiz1/cmp_luasnip",
   "rafamadriz/friendly-snippets",
   "github/copilot.vim",
-
   -- File explorer / status line
   {"0x100101/lab.nvim", run = 'cd js && npm ci', dependencies = { 'nvim-lua/plenary.nvim' } },
   "nvim-tree/nvim-tree.lua",
@@ -52,40 +56,32 @@ require("lazy").setup({
   -- for easily changing a line to comment
   {
     'numToStr/Comment.nvim',
-    opts = {
-      toggler = {
-        ---Line-comment toggle keymap
-        line = 'gcc',
-        ---Block-comment toggle keymap
-        block = "<C-_>",
-      },
-      opleader = {
-        ---Line-comment operator keymap
-        line = 'gc',
-        ---Block-comment operator keymap
-        block = '<C-_>',
-      },
-    },
-    lazy = false,
-  }, 
-  
+  },
+  --   opts = {
+  --     toggler = {
+  --       ---Line-comment toggle keymap
+  --       line = 'gcc',
+  --       ---Block-comment toggle keymap
+  --       block = "<C-_>",
+  --     },
+  --     opleader = {
+  --       ---Line-comment operator keymap
+  --       line = 'gc',
+  --       ---Block-comment operator keymap
+  --       block = '<C-_>',
+  --     },
+  --   },
+  --   lazy = false,
+  -- },
   --Toggle boolean value
   'gerazov/toggle-bool.nvim',
-  -- console log sitter
-  {
-    "iamcco/markdown-preview.nvim",
-    run = "cd app && npm install",
-  },
+  { 'echasnovski/mini.nvim', version = '*' },
 
+  -- Lazy
   {
-  'stevearc/aerial.nvim',
-  opts = {},
-  -- Optional dependencies
-  dependencies = {
-     "nvim-treesitter/nvim-treesitter",
-     "nvim-tree/nvim-web-devicons"
-  },
-}
+    'dgagn/diagflow.nvim',
+    event = 'LspAttach', --This is what I use personnally and it works great
+  }
 
 --Move into seperate files later
  --[[ {

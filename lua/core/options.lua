@@ -38,6 +38,8 @@ vim.opt.diffopt = "vertical"
 
 vim.opt.updatetime = 50
 
+-- Se t cursorline 
+vim.opt.cursorline = true
 
 vim.g.mapleader = " "
 

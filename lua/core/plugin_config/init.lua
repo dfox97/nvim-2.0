@@ -7,7 +7,6 @@ require("core.plugin_config.completions");
 require("core.plugin_config.mason");
 require("core.plugin_config.lsp_config");
 require("core.plugin_config.gitsigns");
-require("core.plugin_config.copilot");
 require("core.plugin_config.markdown_preview");
 require("core.plugin_config.nvimtree_config");
 require("core.plugin_config.harpoon");
@@ -15,4 +14,7 @@ require("core.plugin_config.blamer");
 require("core.plugin_config.lab");
 require("core.plugin_config.fugutive");
 require("core.plugin_config.toggle_bool");
-require("core.plugin_config.aerial");
+--[[ require("core.plugin_config.aerial"); ]]
+require("core.plugin_config.mini");
+require("core.plugin_config.diagflow");
+require("core.plugin_config.comment");
