@@ -32,6 +32,11 @@ vim.api.nvim_set_keymap('n', '<A-Down>', ':m .+1<CR>==', { noremap = true, silen
 -- undotree
 vim.keymap.set("n", "<leader>u", vim.cmd.UndotreeToggle)
 
+vim.keymap.set('i', '<C-e>', 'copilot#Accept("\\<CR>")', {
+  expr = true,
+  replace_keycodes = false
+})
+vim.g.copilot_no_tab_map = true
 -- Harpoon setup in harpoon.lua
 -- LSP setup in lsp.lua
 -- Commentor setup in commentor.lua

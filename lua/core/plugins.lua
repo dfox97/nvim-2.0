@@ -21,7 +21,7 @@ require("lazy").setup({
 
   "saadparwaiz1/cmp_luasnip",
   "rafamadriz/friendly-snippets",
-  "github/copilot.vim",
+   "github/copilot.vim",
   -- File explorer / status line
   {"0x100101/lab.nvim", run = 'cd js && npm ci', dependencies = { 'nvim-lua/plenary.nvim' } },
   "nvim-tree/nvim-tree.lua",
