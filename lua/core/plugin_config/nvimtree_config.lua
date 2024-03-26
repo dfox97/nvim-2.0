@@ -23,9 +23,6 @@ require("nvim-tree").setup({
       quit_on_open = true,
     },
   },
-  --[[ filters = { ]]
-    --[[ dotfiles = true, ]]
-  --[[ }, ]]
 })
 
 -- nvim-tree
@@ -34,7 +31,6 @@ vim.keymap.set("n", "<leader>o", vim.cmd.NvimTreeFindFile)
 vim.keymap.set("n", "<leader>tc", vim.cmd.NvimTreeCollapse)
 vim.keymap.set("n", "<leader>ti", ":NvimTreeResize +10<cr>")
 vim.keymap.set("n", "<leader>td", ":NvimTreeResize -10<cr>")
-vim.api.nvim_set_keymap('x', '<C-b>', "<Plug>CommentBlock", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>pv", vim.cmd.NvimTreeToggle)
 
 vim.keymap.set('n', '<c-n>', ':NvimTreeFindFile<CR>')

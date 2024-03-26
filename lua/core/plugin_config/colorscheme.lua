@@ -1,16 +1,4 @@
---[[ require("catppuccin").setup({
-  flavour = "mocha",
-  transparent_background = true,
-  styles = { -- Handles the styles of general hi groups (see `:h highlight-args`):
-    comments = { "italic" }, -- Change the style of comments
-  },
-}) ]]
-
-
-vim.cmd[[colorscheme tokyonight-night]]
-
-
---[[ local c = require('vscode.colors').get_colors()
+local c = require('vscode.colors').get_colors()
 require('vscode').setup({
 
     -- Enable transparent background
@@ -34,9 +22,8 @@ require('vscode').setup({
         Cursor = { fg=c.vscDarkBlue, bg=c.vscLightGreen, bold=true },
     }
 })
-require('vscode').load()
+require('vscode').load();
 
 vim.o.termguicolors = true
 vim.o.background = "dark"
 vim.cmd[[colorscheme vscode]]
-
