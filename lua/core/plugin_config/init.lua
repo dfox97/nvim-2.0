@@ -8,7 +8,6 @@ require("core.plugin_config.completions");
 require("core.plugin_config.mason");
 require("core.plugin_config.lsp_config");
 require("core.plugin_config.gitsigns");
-require("core.plugin_config.markdown_preview");
 require("core.plugin_config.nvimtree_config");
 require("core.plugin_config.fugutive");
 require("core.plugin_config.toggle_bool");

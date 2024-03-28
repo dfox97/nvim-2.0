@@ -10,6 +10,9 @@ require("lazy").setup({
   "williamboman/mason.nvim",
   "williamboman/mason-lspconfig.nvim",
   "neovim/nvim-lspconfig",
+  {
+    'nvimtools/none-ls.nvim'
+  },
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "L3MON4D3/LuaSnip",

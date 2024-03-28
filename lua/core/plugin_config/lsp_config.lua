@@ -109,3 +109,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end, opts)
   end,
 })
+
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+    sources = {
+      --- use prettier and stylelint for scss and css files
+        null_ls.builtins.formatting.prettier.with({
+            filetypes = { "scss", "css" },
+        }),
+
+        null_ls.builtins.formatting.stylua,
+    },
+})
