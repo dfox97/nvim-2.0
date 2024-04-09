@@ -35,6 +35,22 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" }
   },
   {
+    "Equilibris/nx.nvim",
+
+    dependencies = {
+      "nvim-telescope/telescope.nvim",
+    },
+
+    opts  = {
+      -- See below for config options
+      nx_cmd_root = "npx nx",
+    },
+    
+    keys = {
+      { "<leader>nx", "<cmd>Telescope nx actions<CR>", desc = "nx actions"}
+    },
+  },
+  {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
     dependencies = { 'nvim-lua/plenary.nvim' }

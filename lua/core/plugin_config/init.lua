@@ -1,6 +1,7 @@
 require("core.plugin_config.colorscheme");
 require("core.plugin_config.lualine");
 require("core.plugin_config.treesitter");
+require("core.plugin_config.ng-extension");
 require("core.plugin_config.harpoon");
 require("core.plugin_config.telescope");
 require("core.plugin_config.angular");
