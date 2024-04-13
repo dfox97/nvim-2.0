@@ -1,30 +1,27 @@
 require("lazy").setup({
   -- Themes
   { 'Mofiqul/vscode.nvim', name = "vscode", priority = 1000 },
-  {"ellisonleao/gruvbox.nvim"},
-  {"dracula/vim"},
-  { "catppuccin/nvim", name = "catppuccin", priority = 1000 },
-  { "folke/tokyonight.nvim" },
   -- lsp/completion
   { 'VonHeikemen/lsp-zero.nvim', branch = 'v3.x' },
-  "williamboman/mason.nvim",
-  "williamboman/mason-lspconfig.nvim",
+  { "williamboman/mason.nvim", dependencies = {"williamboman/mason-lspconfig.nvim"} },
   "neovim/nvim-lspconfig",
-  {
-    'nvimtools/none-ls.nvim'
-  },
+  "hrsh7th/cmp-nvim-lsp",
+  "hrsh7th/nvim-cmp",
+  { 'nvimtools/none-ls.nvim' },
+  -- Big improvement to typescript lsp
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
   },
-  "hrsh7th/cmp-nvim-lsp",
-  "hrsh7th/nvim-cmp",
-  "L3MON4D3/LuaSnip",
-  "saadparwaiz1/cmp_luasnip",
-  "rafamadriz/friendly-snippets",
+  {
+    "L3MON4D3/LuaSnip",
+    dependencies = { "rafamadriz/friendly-snippets", "saadparwaiz1/cmp_luasnip" },
+  },
   "github/copilot.vim",
-  "nvim-tree/nvim-tree.lua",
-  "nvim-tree/nvim-web-devicons",
+  {
+    "nvim-tree/nvim-tree.lua",
+     dependencies = { "kyazdani42/nvim-web-devicons" },
+  },
   "nvim-lualine/lualine.nvim",
   "christoomey/vim-tmux-navigator",
   { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" },
@@ -32,7 +29,6 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
   },
-
   {
     "nvim-telescope/telescope.nvim",
     tag = "0.1.4",
@@ -40,15 +36,10 @@ require("lazy").setup({
   },
   {
     "Equilibris/nx.nvim",
-
-    dependencies = {
-      "nvim-telescope/telescope.nvim",
-    },
   },
   {
     'ThePrimeagen/harpoon',
     branch = 'harpoon2',
-    dependencies = { 'nvim-lua/plenary.nvim' }
   },
   "mbbill/undotree",
   "tpope/vim-fugitive",

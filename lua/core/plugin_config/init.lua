@@ -14,3 +14,4 @@ require("core.plugin_config.fugutive");
 require("core.plugin_config.toggle_bool");
 require("core.plugin_config.mini");
 require("core.plugin_config.comment");
+require("core.plugin_config.snippets");
