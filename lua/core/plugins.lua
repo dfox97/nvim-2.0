@@ -13,6 +13,10 @@ require("lazy").setup({
   {
     'nvimtools/none-ls.nvim'
   },
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+  },
   "hrsh7th/cmp-nvim-lsp",
   "hrsh7th/nvim-cmp",
   "L3MON4D3/LuaSnip",
@@ -39,15 +43,6 @@ require("lazy").setup({
 
     dependencies = {
       "nvim-telescope/telescope.nvim",
-    },
-
-    opts  = {
-      -- See below for config options
-      nx_cmd_root = "npx nx",
-    },
-    
-    keys = {
-      { "<leader>nx", "<cmd>Telescope nx actions<CR>", desc = "nx actions"}
     },
   },
   {

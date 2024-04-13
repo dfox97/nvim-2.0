@@ -1,6 +1,8 @@
-require("nx").setup({
-    -- Plugin will load when you use these keys
-    keys = {
-      { "<leader>nx", "<cmd>Telescope nx actions<CR>", desc = "nx actions"}
+require('nx').setup({
+    opts  = {
+      -- See below for config options
+      nx_cmd_root = "npx nx",
     },
 })
+
+vim.api.nvim_set_keymap('n', '<leader>nx', '<cmd>Telescope nx actions<CR>', { noremap = true, silent = true, desc="nx actions" })

@@ -28,6 +28,9 @@ vim.opt.signcolumn = "yes"
 
 vim.opt.colorcolumn = "120"
 
+-- Allow copy and paste from clipboard
+vim.opt.clipboard = "unnamedplus"
+
 -- Sidebar
 vim.opt.numberwidth = 3
 vim.opt.showcmd = true
